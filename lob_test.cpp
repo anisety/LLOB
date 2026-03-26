@@ -68,7 +68,8 @@ static void run_tests() {
     }
 
     {
-        LimitOrderBook book;
+        LimitOrderBook& book = g_book;
+        book.reset();
 
         book.placeLimitOrder(true, 150, 10, 20);
         book.placeLimitOrder(true, 150, 10, 21);
